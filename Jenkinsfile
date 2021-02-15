@@ -19,7 +19,7 @@ node {
     println SFDC_HOST
     println CONNECTED_APP_CONSUMER_KEY
     def toolbelt2 = tool 'toolbelt'
-
+println toolbelt2
     stage('checkout source') {
         // when running in multi-branch job, one must issue this command
         checkout scm
