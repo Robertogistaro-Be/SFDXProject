@@ -36,6 +36,11 @@ println toolbelt
             if (rc != 0) { error 'hub org authorization failed' }
 
 			println rc
+		if (isUnix()) {
+				rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
+			}else{
+			   rmsg = bat returnStdout: true, script: "\"C:\\Program Files\\sfdx\\bin\\sfdx\" force:mdapi:deploy -d manifest/. -u ${HUB_ORG}"
+			}
 			
 			
             printf rmsg
