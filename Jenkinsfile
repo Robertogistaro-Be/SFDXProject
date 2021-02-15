@@ -1,7 +1,9 @@
 #!groovy
 import groovy.json.JsonSlurperClassic
 node {
-
+ environment {
+       env.PATH = env.PATH + ";c:\\Windows\\System32"
+   }
     def BUILD_NUMBER=env.BUILD_NUMBER
     def RUN_ARTIFACT_DIR="tests/${BUILD_NUMBER}"
     def SFDC_USERNAME
